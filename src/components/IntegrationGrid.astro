@@ -42,7 +42,9 @@ const logoFor: Record<string, string> = {
         {group.items.map((item) => {
           const votable = item.status !== 'available' && item.issue;
           const Tag = votable ? 'a' : 'div';
-          const href = votable ? `${repo}/${item.issue}` : undefined;
+          const href = votable
+            ? `${repo}/new?labels=integration-request&title=${encodeURIComponent('Integration request: ' + item.name)}`
+            : undefined;
           return (
             <li>
               <Tag class={`tile tile--${item.status}`} href={href}>

@@ -1,30 +1,11 @@
 ---
-// Continuously scrolling logo bar, the way startups show their integrations.
-// Two identical halves translate -50% for a seamless loop; hover pauses it;
-// prefers-reduced-motion stops the motion and wraps the row instead.
-// Brand marks live in /public/logos as monochrome SVGs (Simple Icons); a few
-// integrations have no brand icon and show as a wordmark in the same row.
+// Scrolling "works with" bar. Only ships-today integrations belong here;
+// planned runtimes/IdPs/policy/notify live in the integrations section.
 const logos: { label: string; file?: string }[] = [
   { label: 'LangGraph', file: 'langchain' },
   { label: 'OpenAI Agents', file: 'openai' },
-  { label: 'LlamaIndex' },
-  { label: 'Bedrock AgentCore', file: 'aws' },
-  { label: 'CrewAI', file: 'crewai' },
-  { label: 'Pydantic AI', file: 'pydantic' },
-  { label: 'Temporal', file: 'temporal' },
-  { label: 'Okta', file: 'okta' },
-  { label: 'Microsoft Entra', file: 'entra' },
-  { label: 'Google', file: 'google' },
-  { label: 'Keycloak', file: 'keycloak' },
-  { label: 'Auth0', file: 'auth0' },
-  { label: 'Open Policy Agent' },
-  { label: 'Cedar' },
-  { label: 'Slack', file: 'slack' },
-  { label: 'Microsoft Teams', file: 'teams' },
-  { label: 'PagerDuty', file: 'pagerduty' },
-  { label: 'ServiceNow' },
 ];
-const track = [...logos, ...logos];
+const track = [...logos, ...logos, ...logos, ...logos];
 ---
 <div class="lm" role="img" aria-label={`Integrations: ${logos.map((l) => l.label).join(', ')}`}>
   <div class="lm__track" aria-hidden="true">
@@ -79,7 +60,7 @@ const track = [...logos, ...logos];
   @media (prefers-reduced-motion: reduce) {
     .lm { -webkit-mask-image: none; mask-image: none; }
     .lm__track { animation: none; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.4rem; width: auto; }
-    /* second (duplicate) half is redundant when wrapped; hide it */
-    .lm__track > :nth-child(n+19) { display: none; }
+    /* duplicate copies are redundant when wrapped; keep only the first set */
+    .lm__track > :nth-child(n+3) { display: none; }
   }
 </style>

@@ -6,6 +6,8 @@ description: Each integration wraps a framework's own pause mechanism, so your t
 
 > **Status:** **LangGraph**, **OpenAI Agents**, and **Amazon Bedrock AgentCore** ship today; the LlamaIndex adapter and the interrupt/webhook resume mode are planned.
 
+**Per-integration tutorials:** [OpenAI Agents SDK](/fleetwrit-site/docs/tutorial-openai-agents) · [Amazon Bedrock AgentCore](/fleetwrit-site/docs/tutorial-agentcore) · [LangChain / LangGraph](/fleetwrit-site/docs/tutorial-langchain) — each gates one consequential action end to end, with a tested offline example.
+
 ## How integrations work
 
 Fleetwrit does not replace your framework's pause-and-resume — it wraps it. The integration turns a native interrupt into a Fleetwrit request, waits for a decision, verifies the receipt, and resumes the framework exactly where it stopped. Your checkpointing is unchanged.

@@ -29,7 +29,7 @@ const docs = [
   { title: 'Defining actions', body: 'Risk, summaries, schemas, redaction, versioning.', href: `${base}docs/actions` },
   { title: 'Asking a human', body: 'approve, input, choose; edits, expiry, idempotency.', href: `${base}docs/asking` },
   { title: 'Policy engines', body: 'allow / deny / ask guard, signed receipts; OPA and Cedar planned.', href: `${base}docs/policy` },
-  { title: 'Integrations', body: 'LangGraph and OpenAI Agents today; LlamaIndex and AgentCore planned.', href: `${base}docs/integrations` },
+  { title: 'Integrations', body: 'LangGraph, OpenAI Agents and Amazon Bedrock AgentCore today; LlamaIndex planned.', href: `${base}docs/integrations` },
   { title: 'Identity', body: 'Dev/local reviewer today; Okta and Entra sign-in on the roadmap.', href: `${base}docs/identity` },
   { title: 'Operate', body: 'Deploy, back up, rotate keys, verify the ledger.', href: `${base}docs/operate` },
   { title: 'Security model', body: 'Threat model, fail-closed behaviour, what it protects.', href: `${base}docs/security` },
@@ -117,7 +117,7 @@ const trust = [
 
     <!-- Logo marquee -->
     <section class="strip">
-      <p class="strip__label">Wraps the pause-and-resume in LangGraph and the OpenAI Agents SDK today — more runtimes, identity and notifications on the roadmap</p>
+      <p class="strip__label">Wraps the pause-and-resume in LangGraph, the OpenAI Agents SDK and Amazon Bedrock AgentCore today — more runtimes, identity and notifications on the roadmap</p>
       <LogoMarquee />
     </section>
 
@@ -204,7 +204,7 @@ if decision.approved:
       <div class="wrap">
         <div class="section__head">
           <h2 class="section__title">Works with the stack you already run.</h2>
-          <p class="section__lede">Today Fleetwrit wraps the LangGraph and OpenAI Agents runtimes and takes verdicts from your own Python policy predicate. IdP sign-in, policy-engine adapters and notifications are on the roadmap — vote on what comes next.</p>
+          <p class="section__lede">Today Fleetwrit wraps the LangGraph, OpenAI Agents, and Amazon Bedrock AgentCore runtimes and takes verdicts from your own Python policy predicate. IdP sign-in, policy-engine adapters and notifications are on the roadmap — vote on what comes next.</p>
         </div>
         <IntegrationGrid />
       </div>
@@ -287,7 +287,7 @@ if decision.approved:
           <article class="plan plan--feature">
             <span class="plan__tag">Recruiting now</span>
             <h3 class="plan__name">Design partner</h3>
-            <p class="plan__price">£1–2k<span>/ mo · 6 months</span></p>
+            <p class="plan__price">By application<span>6-month pilot</span></p>
             <p class="plan__body">Community, plus a direct line to the founder, roadmap influence and a locked discount later.</p>
             <a class="btn btn--light btn--partner plan__cta" href="#partner">Apply to the programme</a>
           </article>
@@ -298,7 +298,7 @@ if decision.approved:
             <a class="btn btn--ghost plan__cta" href="#partner">Start a conversation</a>
           </article>
         </div>
-        <p class="plans__note">Prices are indicative — a working hypothesis we’re validating with design partners, not a committed rate card.</p>
+        <p class="plans__note">Pilot terms are set together with design partners — an honest pricing conversation, not a committed rate card.</p>
       </div>
     </section>
 
@@ -333,7 +333,7 @@ if decision.approved:
             <li>30 minutes a week, one production workflow, an honest pricing conversation in week six.</li>
           </ul>
         </div>
-        <form class="form" action="mailto:partners@fleetwrit.dev" method="post" enctype="text/plain">
+        <form class="form" action="mailto:partners@fleetwrit.ai" method="post" enctype="text/plain">
           <div class="field">
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
@@ -361,7 +361,7 @@ if decision.approved:
             <textarea id="workflow" name="workflow" rows="3"></textarea>
           </div>
           <button class="btn form__submit" type="submit">Send application</button>
-          <p class="form__note">Opens your mail client. Or write to <a href="mailto:partners@fleetwrit.dev">partners@fleetwrit.dev</a>.</p>
+          <p class="form__note">Opens your mail client. Or write to <a href="mailto:partners@fleetwrit.ai">partners@fleetwrit.ai</a>.</p>
         </form>
       </div>
     </section>
@@ -390,7 +390,7 @@ if decision.approved:
         <a href="https://github.com/teopopescu/fleetwrit">GitHub</a>
         <a href={`${import.meta.env.BASE_URL}docs`}>Docs</a>
         <a href="#partner">Design partners</a>
-        <a href="mailto:security@fleetwrit.dev">Report a vulnerability</a>
+        <a href="mailto:security@fleetwrit.ai">Report a vulnerability</a>
       </nav>
       <span class="foot__legal">Apache-2.0 · The written authority over what your agent fleet may do.</span>
     </div>

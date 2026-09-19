@@ -8,7 +8,7 @@
         { "name": "LangGraph / LangChain", "status": "available", "issue": null },
         { "name": "LlamaIndex Workflows", "status": "planned", "issue": "16" },
         { "name": "OpenAI Agents SDK", "status": "available", "issue": null },
-        { "name": "Amazon Bedrock AgentCore", "status": "planned", "issue": "17" },
+        { "name": "Amazon Bedrock AgentCore", "status": "available", "issue": null },
         { "name": "CrewAI", "status": "next", "issue": "12" },
         { "name": "Claude Agent SDK", "status": "next", "issue": "13" },
         { "name": "Microsoft Agent Framework", "status": "next", "issue": "14" },

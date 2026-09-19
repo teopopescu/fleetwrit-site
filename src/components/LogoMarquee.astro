@@ -4,6 +4,7 @@
 const logos: { label: string; file?: string }[] = [
   { label: 'LangGraph', file: 'langchain' },
   { label: 'OpenAI Agents', file: 'openai' },
+  { label: 'Bedrock AgentCore', file: 'aws' },
 ];
 const track = [...logos, ...logos, ...logos, ...logos];
 ---
@@ -61,6 +62,6 @@ const track = [...logos, ...logos, ...logos, ...logos];
     .lm { -webkit-mask-image: none; mask-image: none; }
     .lm__track { animation: none; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.4rem; width: auto; }
     /* duplicate copies are redundant when wrapped; keep only the first set */
-    .lm__track > :nth-child(n+3) { display: none; }
+    .lm__track > :nth-child(n+4) { display: none; }
   }
 </style>

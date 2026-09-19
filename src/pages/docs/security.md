@@ -60,7 +60,7 @@ If the server is down, nobody can decide and agents stay held. That is the fail-
 
 ## What Fleetwrit does and does not protect
 
-**It protects:** the integrity and attribution of the authorisation record; that an executed action matches exactly what a named, IdP-verified human approved; that the record cannot be silently altered.
+**It protects:** the integrity and attribution of the authorisation record; that an executed action matches exactly what the named human approved (IdP-verified identity is planned — see the status note above); that the record cannot be silently altered.
 
 **It does not:** stop an agent running its own side effect twice after a crash inside the `authorize()` block (pass the request id as an idempotency key to the downstream system); act as your identity provider or your policy engine; or protect against a compromised IdP or a malicious admin — those are your controls, and the ledger records what they did.
 

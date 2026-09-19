@@ -33,7 +33,7 @@ def issue_refund(charge: str, amount: int, currency: str) -> str:
 | --- | --- | --- |
 | `type` | Yes | Catalog key. Convention `domain.verb`; renaming creates a new action. |
 | `title`, `summary` | Yes | What the reviewer reads first. `summary` is a template over the args. |
-| `risk` | Yes | Sort order in the inbox. `critical` forces typed confirmation and a fresh IdP sign-in. |
+| `risk` | Yes | Sort order in the inbox. `critical` forces typed confirmation (a fresh IdP sign-in for critical actions is planned). |
 | `reversible` | Yes | `False` forces typed confirmation on review. |
 | args schema | Derived | JSON Schema from type hints or a Pydantic model; validated before the request is created. |
 | `editable` | No | Fields a reviewer may change. Everything else is read-only on their screen. Default: none. |

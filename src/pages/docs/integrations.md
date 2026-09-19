@@ -24,7 +24,7 @@ pip install "fleetwrit[langchain] @ git+https://github.com/teopopescu/fleetwrit-
 | LangGraph / LangChain | `interrupt()` and `Command(resume=...)`; LangChain HITL middleware | `FleetwritMiddleware(...)` or `fleetwrit_node()` |
 | LlamaIndex Workflows | `InputRequiredEvent` / `HumanResponseEvent` | `FleetwritHITL(workflow)` |
 | OpenAI Agents SDK | `needs_approval`, `result.interruptions`, `RunState` | `await fleetwrit_run(agent, input)` |
-| Amazon Bedrock AgentCore | In-agent tool gating, or a Gateway Lambda interceptor | `gate(fw, ...)(tool)` or `gateway_handler(fw, ...)` |
+| Amazon Bedrock AgentCore | In-agent tool gating (Gateway interceptor is experimental) | `gate(fw, ...)(tool)` |
 
 ## LangGraph example
 
@@ -49,7 +49,7 @@ The AgentCore adapter is implemented and tested in fleetwrit 0.0.2. Install it a
 pip install "fleetwrit[agentcore]"
 ```
 
-`fleetwrit.integrations.agentcore` exposes `gate`, `gateway_handler` and `tool_input`. You choose where to gate: inside the agent, or at the AgentCore Gateway.
+Gate **inside the agent** with `gate` — the recommended, fully-tested path (no Lambda, no gateway). Gating at the AgentCore Gateway with `gateway_handler` is **experimental** (see the note below).
 
 ### In-agent gating on AgentCore Runtime
 
@@ -75,9 +75,9 @@ gated_roll_back = gate(
 
 `gate` supports both sync and `async def` tools. On rejection the wrapped tool returns a short `"Rejected by reviewer: …"` string the agent can read and act on.
 
-### Gateway Lambda interceptor
+### Gateway interceptor (experimental)
 
-Gate any tool at the AgentCore Gateway with no agent-code changes. Deploy `handler` as the Lambda behind an AgentCore Gateway target.
+> **Experimental — not yet validated on live AWS.** `gateway_handler` builds an AWS Lambda handler meant to sit behind an AgentCore **Gateway** target, so any tool is gated with no agent-code changes. The handler and `tool_input` are unit-tested, but the exact event shape AgentCore Gateway passes to a Lambda target has not been confirmed against real AWS — treat this as a pattern to adapt to your Gateway target, not a drop-in. Use `gate` above unless you specifically need gateway-level gating.
 
 ```python
 from fleetwrit import Client
@@ -86,7 +86,6 @@ from mytools import roll_back, roll_back_def   # your impl + its @action definit
 
 fw = Client()
 
-# Deploy `handler` as the Lambda behind an AgentCore Gateway target.
 handler = gateway_handler(
     fw,
     build_action=lambda service, version: roll_back_def.action(service=service, version=version),
@@ -94,14 +93,7 @@ handler = gateway_handler(
 )
 ```
 
-The handler reads the tool args from the Gateway event, requires a Fleetwrit decision, and:
-
-- on approval runs `invoke(**approved_args)` and returns `{"statusCode": 200, "approved": true, "result": ..., "receipt": "<JWS>"}`;
-- on rejection returns `{"statusCode": 403, "approved": false, "reason": "..."}` and the tool never runs.
-
-There is also `tool_input(event)`, which extracts the tool arguments from the common Gateway event shapes (`input` / `arguments` / `parameters` / `body`).
-
-The SDK pieces — `gate`, `gateway_handler` and `tool_input` — are implemented and tested. Deploying the handler as a Lambda and wiring the AgentCore Gateway target (SAM/CloudFormation) is standard AWS setup you own; there is no one-click deploy.
+On approval the handler runs `invoke(**approved_args)` and returns `{"statusCode": 200, "approved": true, "result": ..., "receipt": "<JWS>"}`; on rejection it returns `{"statusCode": 403, "approved": false, "reason": "..."}` and the tool never runs. `tool_input(event)` extracts the args from the common event shapes (`input` / `arguments` / `parameters` / `body`) — you may need to map it to your Gateway target's actual event.
 
 ## Blocking vs interrupt mode
 

@@ -4,6 +4,8 @@ title: Policy engines
 description: Fleetwrit does not decide when to ask. A policy engine returns one of three verdicts — allow, deny or ask — and the SDK acts on it.
 ---
 
+> **Status:** The `allow` / `deny` / `ask` guard contract and the Python-predicate policy are implemented today. The **OPA and Cedar adapters are not yet built** — the Rego and Cedar examples below, including the worked refunds example, are illustrative of the planned design.
+
 ## The contract
 
 ```
@@ -90,7 +92,7 @@ Most of this you already have — Fleetwrit sits between these pieces, it does n
 - **Cedar policies you already run** — your `.cedar` files and `entities.json`, evaluated through `cedarpy`. This is where "when do we even ask?" lives.
 - **An identity provider** — Okta or Entra. Reviewers sign in with their work account; Fleetwrit uses your IdP, it is not one.
 - **A queue of reviewers** — a `finance-ops` queue whose members come from an IdP group.
-- **A Fleetwrit server and an agent API key**, plus `pip install "fleetwrit[cedar]"`.
+- **A Fleetwrit server and an agent API key**, plus `pip install "fleetwrit[cedar] @ git+https://github.com/teopopescu/fleetwrit-python.git"` (the Cedar adapter is planned).
 
 ### The policy
 

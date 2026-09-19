@@ -4,6 +4,8 @@ title: Integrations
 description: Each integration wraps a framework's own pause mechanism, so your team keeps its checkpointing and adds Fleetwrit's queue, identity and record.
 ---
 
+> **Status:** Only the **LangGraph / LangChain** and **OpenAI Agents SDK** integrations ship in the current alpha. LlamaIndex Workflows, Amazon Bedrock AgentCore and the interrupt-mode signed webhook described below are planned, not yet implemented.
+
 ## How integrations work
 
 Fleetwrit does not replace your framework's pause-and-resume — it wraps it. The integration turns a native interrupt into a Fleetwrit request, waits for a decision, verifies the receipt, and resumes the framework exactly where it stopped. Your checkpointing is unchanged.
@@ -11,7 +13,8 @@ Fleetwrit does not replace your framework's pause-and-resume — it wraps it. Th
 Each integration ships as a PyPI extra so the core stays dependency-free:
 
 ```bash
-pip install "fleetwrit[langchain]"      # or [llamaindex], [openai-agents], [agentcore]
+pip install "fleetwrit[langchain] @ git+https://github.com/teopopescu/fleetwrit-python.git"
+# langchain and openai-agents ship today; llamaindex and agentcore are planned
 ```
 
 ## Agent runtimes

@@ -6,10 +6,10 @@ description: From pip install to a first approved action in about ten minutes, o
 
 ## 1. Install
 
-Fleetwrit ships as a single package. The `dev` extra pulls in a local server so you can run the whole loop without Docker or Node.
+Fleetwrit ships as a single package. The `dev` extra pulls in a local server so you can run the whole loop without Docker or Node. During the alpha it installs from source; a PyPI release is planned.
 
 ```bash
-pip install --pre "fleetwrit[dev]"
+pip install "fleetwrit[dev] @ git+https://github.com/teopopescu/fleetwrit-python.git"
 ```
 
 ## 2. Start the local server

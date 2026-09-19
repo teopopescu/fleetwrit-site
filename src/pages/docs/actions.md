@@ -89,11 +89,13 @@ This still works, but the catalog marks the type **undeclared** so a platform ow
 
 ## Lint in CI
 
+> **Status:** `fleetwrit actions lint` is a planned CLI subcommand — it is currently a stub, so it does not yet perform these checks.
+
 ```bash
 fleetwrit actions lint
 ```
 
-Fails the build on a missing summary, an unknown display hint, or a `type` that breaks the `domain.verb` convention. Run it in CI so a bad action definition never ships.
+The planned linter fails the build on a missing summary, an unknown display hint, or a `type` that breaks the `domain.verb` convention. Run it in CI so a bad action definition never ships.
 
 ## Next steps
 

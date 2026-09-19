@@ -6,9 +6,9 @@
       "label": "Agent runtimes",
       "items": [
         { "name": "LangGraph / LangChain", "status": "available", "issue": null },
-        { "name": "LlamaIndex Workflows", "status": "available", "issue": null },
+        { "name": "LlamaIndex Workflows", "status": "planned", "issue": "16" },
         { "name": "OpenAI Agents SDK", "status": "available", "issue": null },
-        { "name": "Amazon Bedrock AgentCore", "status": "available", "issue": null },
+        { "name": "Amazon Bedrock AgentCore", "status": "planned", "issue": "17" },
         { "name": "CrewAI", "status": "next", "issue": "12" },
         { "name": "Claude Agent SDK", "status": "next", "issue": "13" },
         { "name": "Microsoft Agent Framework", "status": "next", "issue": "14" },
@@ -21,10 +21,10 @@
       "id": "identity",
       "label": "Identity",
       "items": [
-        { "name": "Okta", "status": "available", "issue": null },
-        { "name": "Microsoft Entra ID", "status": "available", "issue": null },
-        { "name": "Google sign-in (development)", "status": "available", "issue": null },
-        { "name": "Keycloak / Dex", "status": "available", "issue": null },
+        { "name": "Okta", "status": "next", "issue": "19" },
+        { "name": "Microsoft Entra ID", "status": "next", "issue": "20" },
+        { "name": "Google sign-in (development)", "status": "planned", "issue": "33" },
+        { "name": "Keycloak / Dex", "status": "planned", "issue": "34" },
         { "name": "Google Workspace groups", "status": "next", "issue": "18" },
         { "name": "SCIM provisioning", "status": "planned", "issue": "35" },
         { "name": "Auth0", "status": "planned", "issue": "36" }
@@ -34,18 +34,18 @@
       "id": "policy",
       "label": "Policy engines",
       "items": [
-        { "name": "Open Policy Agent", "status": "available", "issue": null },
-        { "name": "Cedar", "status": "available", "issue": null },
-        { "name": "Python predicate", "status": "available", "issue": null }
+        { "name": "Python predicate", "status": "available", "issue": null },
+        { "name": "Open Policy Agent", "status": "planned", "issue": "37" },
+        { "name": "Cedar", "status": "planned", "issue": "38" }
       ]
     },
     {
       "id": "notifications",
       "label": "Notifications",
       "items": [
-        { "name": "Email", "status": "available", "issue": null },
-        { "name": "Slack (incoming webhook)", "status": "available", "issue": null },
-        { "name": "Generic signed webhook", "status": "available", "issue": null },
+        { "name": "Slack (incoming webhook)", "status": "next", "issue": "21" },
+        { "name": "Email", "status": "planned", "issue": "39" },
+        { "name": "Generic signed webhook", "status": "planned", "issue": "40" },
         { "name": "Microsoft Teams app", "status": "next", "issue": "22" },
         { "name": "PagerDuty", "status": "planned", "issue": "41" },
         { "name": "ServiceNow", "status": "planned", "issue": "42" },

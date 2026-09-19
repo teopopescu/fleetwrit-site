@@ -4,6 +4,8 @@ title: Security model
 description: What Fleetwrit protects, what it does not, and the mechanisms behind its one promise — that the record of who authorised what is accurate and tamper-evident.
 ---
 
+> **Status:** The fingerprint, hash-chained ledger and receipt signing are implemented today, but in the current alpha **receipts are signed with an ephemeral dev key** — there is no production key management or rotation yet. IdP-verified reviewers, fresh sign-in (`max_age`) and break-glass are planned, not built; today the reviewer identity is a claimed email.
+
 ## The promise
 
 Fleetwrit's whole value rests on two mechanisms: **authentication** (who the reviewer really is) and **receipt signing** (proof they approved this exact action). This page describes both, plus the record that ties them together.

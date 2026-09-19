@@ -4,6 +4,8 @@ title: Operate
 description: Run Fleetwrit yourself. Three deployment paths from one image, with metrics, backups, key rotation and a ledger you can verify offline.
 ---
 
+> **Status:** Today Fleetwrit runs as a local FastAPI + SQLite server via `fleetwrit dev` (auth off, local/dev only). The production deployment described here — Postgres, `docker compose`, the Keycloak profile, the Helm chart, HA background workers and webhook retries — is planned design, not yet implemented.
+
 ## Deployment paths
 
 All three use the same image and the same migrations.

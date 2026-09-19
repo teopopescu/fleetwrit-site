@@ -4,6 +4,8 @@ title: Identity
 description: Reviewers sign in with their own work account, through the identity provider your company already runs. Fleetwrit is not an identity provider — it uses yours.
 ---
 
+> **Status:** This page describes the planned identity design. It is **not implemented in the current alpha** — there is no IdP sign-in yet. Today the reviewer's identity is a claimed email, not verified by an identity provider. OIDC sign-in (Okta and Entra) is the nearest-term item on the roadmap.
+
 ## One sign-in route
 
 Fleetwrit signs people in with the OIDC authorization-code flow with PKCE, which covers Okta and Entra with a single code path. The ledger records the reviewer's **issuer, subject, email and authentication time** from the ID token — not a Fleetwrit-local username — so an auditor can trace a decision back to a real, verified person.

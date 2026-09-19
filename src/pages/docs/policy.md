@@ -117,7 +117,7 @@ when   { context.amount > 100000 }
 unless { context.fleetwrit_receipt_valid == true };
 ```
 
-Cedar reads `context.fleetwrit_receipt_valid` but cannot check a signature. Fleetwrit's Cedar adapter verifies the receipt's JWS against the published [JWKS](/docs/security) and injects that boolean before Cedar evaluates — so the flag can only be true because a real, IdP-verified person approved this exact call.
+Cedar reads `context.fleetwrit_receipt_valid` but cannot check a signature. Fleetwrit's Cedar adapter verifies the receipt's JWS against the published [JWKS](/fleetwrit-site/docs/security) and injects that boolean before Cedar evaluates — so the flag can only be true because a real, IdP-verified person approved this exact call.
 
 ### The agent
 
@@ -175,7 +175,7 @@ Cedar decides *whether* to ask. It cannot capture the decision, prove who made i
 - **Proof, not a flag.** A boolean set from a Slack reaction proves nothing to an auditor; the receipt is signed and tied to an IdP identity and the exact fingerprint.
 - **Durable resume on one decision.** A hand-rolled wait loop dies on restart or fires the refund twice; Fleetwrit re-attaches by idempotency key and accepts at most one terminal decision, delivered and consumed once. (It can't stop *your* downstream call from repeating after a crash — pass the request id as the downstream idempotency key.)
 - **Safe edits.** `decision.authorize()` refuses to run anything but the signed £500 action.
-- **Segregation of duties.** A log in the agent team's own database is the record auditors reject; Fleetwrit's [hash-chained ledger](/docs/security) lives outside the system it governs.
+- **Segregation of duties.** A log in the agent team's own database is the record auditors reject; Fleetwrit's [hash-chained ledger](/fleetwrit-site/docs/security) lives outside the system it governs.
 
 Your framework's native approval can *pause* the agent, but it cannot give the organisation cross-stack identity, a receipt Cedar can trust, or an independent record.
 
@@ -195,5 +195,5 @@ guard = fw.guard(policy=BusinessHours())
 
 ## Next steps
 
-- [Asking a human](/docs/asking) — what happens once the verdict is `ask`.
-- [Security model](/docs/security) — how receipts are signed and rotated.
+- [Asking a human](/fleetwrit-site/docs/asking) — what happens once the verdict is `ask`.
+- [Security model](/fleetwrit-site/docs/security) — how receipts are signed and rotated.

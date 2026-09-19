@@ -55,7 +55,7 @@ The SDK fails closed, so Fleetwrit is a production dependency of every gated age
 
 ## Backups
 
-Rely on your managed database's automated backups and point-in-time recovery. Test a restore once during install — it is on the [install checklist](/docs/quickstart). The ledger's integrity does not depend on backups: the hash chain detects tampering regardless.
+Rely on your managed database's automated backups and point-in-time recovery. Test a restore once during install — it is on the [install checklist](/fleetwrit-site/docs/quickstart). The ledger's integrity does not depend on backups: the hash chain detects tampering regardless.
 
 ## Verifying and exporting the ledger
 
@@ -94,5 +94,5 @@ Produces a JSON and PDF summary — requests by action type and outcome, edit ra
 
 ## Next steps
 
-- [Security model](/docs/security) — the guarantees behind all of this.
-- [Identity](/docs/identity) — wiring your IdP for production sign-in.
+- [Security model](/fleetwrit-site/docs/security) — the guarantees behind all of this.
+- [Identity](/fleetwrit-site/docs/identity) — wiring your IdP for production sign-in.

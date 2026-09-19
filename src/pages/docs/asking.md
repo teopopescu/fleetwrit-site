@@ -63,7 +63,7 @@ fw.approve(action, expires_in="30m", on_expiry="reject")
 Every call takes an `idempotency_key`, defaulting to a hash of the run id, step id and fingerprint. A retried call re-attaches to the open request instead of creating a second one.
 
 - **Blocking mode** long-polls and survives a process restart: the SDK re-attaches by idempotency key.
-- **Interrupt mode** raises the runtime's own interrupt and resumes from a signed webhook — see [Integrations](/docs/integrations).
+- **Interrupt mode** raises the runtime's own interrupt and resumes from a signed webhook — see [Integrations](/fleetwrit-site/docs/integrations).
 
 The guarantee: for one request and one fingerprint, the server accepts **at most one terminal decision**, and a caller that re-attaches receives that same decision and no other.
 
@@ -90,5 +90,5 @@ with fw.task("triage-refund"):
 
 ## Next steps
 
-- [Policy engines](/docs/policy) — decide when to ask a human at all.
-- [Defining actions](/docs/actions) — mark fields editable, set expiry defaults.
+- [Policy engines](/fleetwrit-site/docs/policy) — decide when to ask a human at all.
+- [Defining actions](/fleetwrit-site/docs/actions) — mark fields editable, set expiry defaults.

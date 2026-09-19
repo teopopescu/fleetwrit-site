@@ -6,5 +6,6 @@ import { defineConfig } from 'astro/config';
 // in the server repo under site/; it splits into fleetwrit-site at 0.1.0.
 export default defineConfig({
   site: 'https://fleetwrit.dev',
+  base: '/fleetwrit-site/',
   compressHTML: true,
 });

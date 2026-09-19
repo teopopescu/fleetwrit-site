@@ -100,7 +100,7 @@ fleetwrit ledger export      # JSONL with the chain head, for an auditor
 
 ## Next steps
 
-- [Defining actions](/docs/actions) — risk, summaries, display hints, redaction and versioning.
-- [Asking a human](/docs/asking) — edits, expiry, idempotency and durable resume.
-- [Integrations](/docs/integrations) — wrap your framework's own pause-and-resume.
-- [Identity](/docs/identity) — swap dev mode for Okta or Entra sign-in.
+- [Defining actions](/fleetwrit-site/docs/actions) — risk, summaries, display hints, redaction and versioning.
+- [Asking a human](/fleetwrit-site/docs/asking) — edits, expiry, idempotency and durable resume.
+- [Integrations](/fleetwrit-site/docs/integrations) — wrap your framework's own pause-and-resume.
+- [Identity](/fleetwrit-site/docs/identity) — swap dev mode for Okta or Entra sign-in.

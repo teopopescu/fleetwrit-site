@@ -70,5 +70,5 @@ See `SECURITY.md` in the repository for the disclosure address. Releases with a 
 
 ## Next steps
 
-- [Policy engines](/docs/policy) — verifying receipts in OPA and a gateway.
-- [Operate](/docs/operate) — key rotation and ledger verification in practice.
+- [Policy engines](/fleetwrit-site/docs/policy) — verifying receipts in OPA and a gateway.
+- [Operate](/fleetwrit-site/docs/operate) — key rotation and ledger verification in practice.

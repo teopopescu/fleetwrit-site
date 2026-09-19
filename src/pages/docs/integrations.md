@@ -66,9 +66,9 @@ nox -s contract-langchain
 
 ## Status
 
-The live list of runtimes, identity providers, policy engines and notification channels — with `available` / `next` / `planned` status — is on the [integrations section of the site](/#integrations). Vote for what you need next on the linked GitHub issues.
+The live list of runtimes, identity providers, policy engines and notification channels — with `available` / `next` / `planned` status — is on the [integrations section of the site](/fleetwrit-site/#integrations). Vote for what you need next on the linked GitHub issues.
 
 ## Next steps
 
-- [Identity](/docs/identity) — connect the IdP reviewers sign in with.
-- [Asking a human](/docs/asking) — the calls the integrations wrap.
+- [Identity](/fleetwrit-site/docs/identity) — connect the IdP reviewers sign in with.
+- [Asking a human](/fleetwrit-site/docs/asking) — the calls the integrations wrap.

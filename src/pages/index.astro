@@ -7,6 +7,8 @@ import DashboardPanels from '../components/DashboardPanels.astro';
 import LogoMarquee from '../components/LogoMarquee.astro';
 import UseCases from '../components/UseCases.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const quickstart = 'pip install "git+https://github.com/teopopescu/fleetwrit-python.git"';
 
 const problems = [
@@ -23,14 +25,14 @@ const steps = [
 ];
 
 const docs = [
-  { title: 'Quickstart', body: 'pip install to a first approved action in ten minutes.', href: '/docs/quickstart' },
-  { title: 'Defining actions', body: 'Risk, summaries, schemas, redaction, versioning.', href: '/docs/actions' },
-  { title: 'Asking a human', body: 'approve, input, choose; edits, expiry, idempotency.', href: '/docs/asking' },
-  { title: 'Policy engines', body: 'allow / deny / ask guard, signed receipts; OPA and Cedar planned.', href: '/docs/policy' },
-  { title: 'Integrations', body: 'LangGraph and OpenAI Agents today; LlamaIndex and AgentCore planned.', href: '/docs/integrations' },
-  { title: 'Identity', body: 'Dev/local reviewer today; Okta and Entra sign-in on the roadmap.', href: '/docs/identity' },
-  { title: 'Operate', body: 'Deploy, back up, rotate keys, verify the ledger.', href: '/docs/operate' },
-  { title: 'Security model', body: 'Threat model, fail-closed behaviour, what it protects.', href: '/docs/security' },
+  { title: 'Quickstart', body: 'pip install to a first approved action in ten minutes.', href: `${base}docs/quickstart` },
+  { title: 'Defining actions', body: 'Risk, summaries, schemas, redaction, versioning.', href: `${base}docs/actions` },
+  { title: 'Asking a human', body: 'approve, input, choose; edits, expiry, idempotency.', href: `${base}docs/asking` },
+  { title: 'Policy engines', body: 'allow / deny / ask guard, signed receipts; OPA and Cedar planned.', href: `${base}docs/policy` },
+  { title: 'Integrations', body: 'LangGraph and OpenAI Agents today; LlamaIndex and AgentCore planned.', href: `${base}docs/integrations` },
+  { title: 'Identity', body: 'Dev/local reviewer today; Okta and Entra sign-in on the roadmap.', href: `${base}docs/identity` },
+  { title: 'Operate', body: 'Deploy, back up, rotate keys, verify the ledger.', href: `${base}docs/operate` },
+  { title: 'Security model', body: 'Threat model, fail-closed behaviour, what it protects.', href: `${base}docs/security` },
 ];
 
 const boundary = [
@@ -53,7 +55,7 @@ const trust = [
 
   <header class="masthead">
     <div class="wrap masthead__inner">
-      <a class="brand" href="/" aria-label="Fleetwrit home">
+      <a class="brand" href={import.meta.env.BASE_URL} aria-label="Fleetwrit home">
         <span class="brand__mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" width="30" height="30"><rect x="0.75" y="0.75" width="30.5" height="30.5" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 16.4l4.4 4.4L23 10.8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="square"/></svg>
         </span>
@@ -315,7 +317,7 @@ if decision.approved:
             </article>
           ))}
         </div>
-        <p class="trust__link"><a href="/docs/security">Read the security model</a></p>
+        <p class="trust__link"><a href={`${import.meta.env.BASE_URL}docs/security`}>Read the security model</a></p>
       </div>
     </section>
 
@@ -386,7 +388,7 @@ if decision.approved:
       <span class="foot__brand">Fleetwrit</span>
       <nav class="foot__links" aria-label="Footer">
         <a href="https://github.com/teopopescu/fleetwrit">GitHub</a>
-        <a href="/docs">Docs</a>
+        <a href={`${import.meta.env.BASE_URL}docs`}>Docs</a>
         <a href="#partner">Design partners</a>
         <a href="mailto:security@fleetwrit.dev">Report a vulnerability</a>
       </nav>

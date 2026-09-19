@@ -1,40 +1,42 @@
 ---
 import DocsLayout from '../../layouts/DocsLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const groups = [
   {
     label: 'Get started',
     items: [
-      { title: 'Quickstart', href: '/docs/quickstart', body: 'From pip install to a first approved action in ten minutes.' },
+      { title: 'Quickstart', href: `${base}docs/quickstart`, body: 'From pip install to a first approved action in ten minutes.' },
     ],
   },
   {
     label: 'Build',
     items: [
-      { title: 'Defining actions', href: '/docs/actions', body: 'The @action decorator: risk, summaries, schemas, redaction, versioning.' },
-      { title: 'Asking a human', href: '/docs/asking', body: 'approve, input and choose; edits, expiry, idempotency and resume.' },
-      { title: 'Policy engines', href: '/docs/policy', body: 'The allow / deny / ask guard and signed receipts; OPA and Cedar adapters planned.' },
+      { title: 'Defining actions', href: `${base}docs/actions`, body: 'The @action decorator: risk, summaries, schemas, redaction, versioning.' },
+      { title: 'Asking a human', href: `${base}docs/asking`, body: 'approve, input and choose; edits, expiry, idempotency and resume.' },
+      { title: 'Policy engines', href: `${base}docs/policy`, body: 'The allow / deny / ask guard and signed receipts; OPA and Cedar adapters planned.' },
     ],
   },
   {
     label: 'Connect',
     items: [
-      { title: 'Integrations', href: '/docs/integrations', body: 'Wrap the pause-and-resume in LangGraph and OpenAI Agents today; LlamaIndex and AgentCore planned.' },
-      { title: 'Identity', href: '/docs/identity', body: 'Dev/local reviewer today; Okta and Entra OIDC sign-in on the roadmap.' },
+      { title: 'Integrations', href: `${base}docs/integrations`, body: 'Wrap the pause-and-resume in LangGraph and OpenAI Agents today; LlamaIndex and AgentCore planned.' },
+      { title: 'Identity', href: `${base}docs/identity`, body: 'Dev/local reviewer today; Okta and Entra OIDC sign-in on the roadmap.' },
     ],
   },
   {
     label: 'Run',
     items: [
-      { title: 'Operate', href: '/docs/operate', body: 'Deploy, configure, back up, rotate keys and verify the ledger.' },
-      { title: 'Security model', href: '/docs/security', body: 'The threat model, fail-closed behaviour, and what Fleetwrit protects.' },
+      { title: 'Operate', href: `${base}docs/operate`, body: 'Deploy, configure, back up, rotate keys and verify the ledger.' },
+      { title: 'Security model', href: `${base}docs/security`, body: 'The threat model, fail-closed behaviour, and what Fleetwrit protects.' },
     ],
   },
 ];
 ---
 <DocsLayout title="Documentation" description="Everything you need to gate an agent action behind a named human — from your first local approval to a production rollout.">
   <p>Fleetwrit is the independent authorisation record for consequential AI-agent actions. An agent stops before a consequential action, a named human decides, and the agent resumes on exactly that decision — with a signed receipt and a tamper-evident record that lives outside the system it governs.</p>
-  <p>New here? Start with the <a href="/docs/quickstart">Quickstart</a>. It takes about ten minutes and needs nothing but <code>pip</code>.</p>
+  <p>New here? Start with the <a href={`${import.meta.env.BASE_URL}docs/quickstart`}>Quickstart</a>. It takes about ten minutes and needs nothing but <code>pip</code>.</p>
 
   {groups.map((group) => (
     <section class="dgrp">

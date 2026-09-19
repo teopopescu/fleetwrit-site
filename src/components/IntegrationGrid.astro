@@ -49,7 +49,7 @@ const logoFor: Record<string, string> = {
                 <span class="tile__row">
                   <span class="tile__id">
                     {logoFor[item.name]
-                      ? <img class="tile__logo" src={`/logos/${logoFor[item.name]}.svg`} alt="" width="20" height="20" loading="lazy" />
+                      ? <img class="tile__logo" src={`${import.meta.env.BASE_URL}logos/${logoFor[item.name]}.svg`} alt="" width="20" height="20" loading="lazy" />
                       : <span class="tile__glyph" aria-hidden="true">{item.name.charAt(0)}</span>}
                     <span class="tile__name">{item.name}</span>
                   </span>

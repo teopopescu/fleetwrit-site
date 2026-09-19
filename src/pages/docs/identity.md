@@ -46,7 +46,7 @@ When a reviewer opens a critical request, Fleetwrit sends them back through the 
 
 ## Roles and break-glass
 
-Local password accounts exist only for `fleetwrit dev` and for a single break-glass admin. Break-glass is for an **IdP outage only**: it is disabled by default, bound to a hardware security key, time-boxed, and every break-glass decision is chained to the ledger and shown in red until an admin reviews it. See the [security model](/docs/security).
+Local password accounts exist only for `fleetwrit dev` and for a single break-glass admin. Break-glass is for an **IdP outage only**: it is disabled by default, bound to a hardware security key, time-boxed, and every break-glass decision is chained to the ledger and shown in red until an admin reviews it. See the [security model](/fleetwrit-site/docs/security).
 
 ## Testing your setup
 
@@ -54,5 +54,5 @@ The install checklist includes an identity check: sign in as a reviewer and as a
 
 ## Next steps
 
-- [Operate](/docs/operate) — configure the OIDC client and sessions in production.
-- [Security model](/docs/security) — sessions, tokens and break-glass in full.
+- [Operate](/fleetwrit-site/docs/operate) — configure the OIDC client and sessions in production.
+- [Security model](/fleetwrit-site/docs/security) — sessions, tokens and break-glass in full.

@@ -99,5 +99,5 @@ The planned linter fails the build on a missing summary, an unknown display hint
 
 ## Next steps
 
-- [Asking a human](/docs/asking) — how `approve`, `input` and `choose` behave.
-- [Policy engines](/docs/policy) — decide *when* to ask.
+- [Asking a human](/fleetwrit-site/docs/asking) — how `approve`, `input` and `choose` behave.
+- [Policy engines](/fleetwrit-site/docs/policy) — decide *when* to ask.

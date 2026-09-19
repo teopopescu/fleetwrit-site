@@ -7,51 +7,53 @@ const fm = Astro.props.frontmatter ?? Astro.props;
 const title: string = fm.title ?? 'Docs';
 const description: string | undefined = fm.description;
 
+const base = import.meta.env.BASE_URL;
+
 const nav = [
   {
     label: 'Get started',
     items: [
-      { title: 'Overview', href: '/docs' },
-      { title: 'Quickstart', href: '/docs/quickstart' },
+      { title: 'Overview', href: `${base}docs` },
+      { title: 'Quickstart', href: `${base}docs/quickstart` },
     ],
   },
   {
     label: 'Build',
     items: [
-      { title: 'Defining actions', href: '/docs/actions' },
-      { title: 'Asking a human', href: '/docs/asking' },
-      { title: 'Policy engines', href: '/docs/policy' },
+      { title: 'Defining actions', href: `${base}docs/actions` },
+      { title: 'Asking a human', href: `${base}docs/asking` },
+      { title: 'Policy engines', href: `${base}docs/policy` },
     ],
   },
   {
     label: 'Connect',
     items: [
-      { title: 'Integrations', href: '/docs/integrations' },
-      { title: 'Identity', href: '/docs/identity' },
+      { title: 'Integrations', href: `${base}docs/integrations` },
+      { title: 'Identity', href: `${base}docs/identity` },
     ],
   },
   {
     label: 'Run',
     items: [
-      { title: 'Operate', href: '/docs/operate' },
-      { title: 'Security model', href: '/docs/security' },
+      { title: 'Operate', href: `${base}docs/operate` },
+      { title: 'Security model', href: `${base}docs/security` },
     ],
   },
 ];
 
-const here = Astro.url.pathname.replace(/\/$/, '') || '/docs';
+const here = Astro.url.pathname.replace(/\/$/, '') || `${base}docs`;
 ---
 <Base title={`${title} · Fleetwrit docs`} description={description}>
   <header class="dtop">
     <div class="dtop__inner">
-      <a class="dbrand" href="/" aria-label="Fleetwrit home">
+      <a class="dbrand" href={import.meta.env.BASE_URL} aria-label="Fleetwrit home">
         <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="1" y="1" width="22" height="22" rx="7" fill="#14161c"/><path d="M7 12.4l3.1 3.1L17 8.6" stroke="#fff" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Fleetwrit</span>
         <span class="dbrand__tag">docs</span>
       </a>
       <nav class="dtop__nav" aria-label="Site">
-        <a href="/#how">Product</a>
-        <a href="/#pricing">Pricing</a>
+        <a href={`${import.meta.env.BASE_URL}#how`}>Product</a>
+        <a href={`${import.meta.env.BASE_URL}#pricing`}>Pricing</a>
         <a href="https://github.com/teopopescu/fleetwrit">GitHub</a>
       </nav>
     </div>
@@ -80,7 +82,7 @@ const here = Astro.url.pathname.replace(/\/$/, '') || '/docs';
       {description && <p class="doc-lede">{description}</p>}
       <slot />
       <footer class="doc-foot">
-        <a href="/docs">← All docs</a>
+        <a href={`${import.meta.env.BASE_URL}docs`}>← All docs</a>
         <a href="https://github.com/teopopescu/fleetwrit/edit/main/site/src/pages/docs">Edit this page</a>
       </footer>
     </article>
